@@ -46,6 +46,9 @@ class Whiplash::Batches::Api
       form.field_with(name: 'user[email]').value = @username
       form.field_with(name: 'user[password]').value = @password
     end.submit
+    if current_page.title == "Log In"
+      raise "Credentials: Login credentials invalid!"
+    end
   end
 
   private
