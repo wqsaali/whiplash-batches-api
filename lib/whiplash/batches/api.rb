@@ -3,10 +3,10 @@ class Whiplash::Batches::Api
   attr_reader :agent, :current_page, :whiplash_base_url
 
   def initialize
-    if Whiplash.configration.presnt?
-      @username = Whiplash.configration.whiplash_email
-      @password = Whiplash.configration.whiplash_password
-      @whiplash_base_url = Whiplash.configration.whiplash_base_url
+    if Whiplash.configuration.presnt?
+      @username = Whiplash.configuration.whiplash_email
+      @password = Whiplash.configuration.whiplash_password
+      @whiplash_base_url = Whiplash.configuration.whiplash_base_url
     end
     check_confuration_variables
     @agent = Mechanize.new
