@@ -1,0 +1,14 @@
+/.bundle/
+/.env
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/html/
+/pkg/
+/spec/reports/
+/tmp/
+/test.rb
+/.rake_t_cache
+/Gemfile.lock
+*.gem

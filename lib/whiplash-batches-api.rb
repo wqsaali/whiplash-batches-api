@@ -1,0 +1,1 @@
+require "whiplash/batches"
