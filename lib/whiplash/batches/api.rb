@@ -33,7 +33,8 @@ class Whiplash::Batches::Api
     results.flatten
   end
 
-  def orders(batch_id = '437749')
+  def orders(batch_id = nil)
+    return [] if batch_id.nil?
     @current_page = agent.get("#{@whiplash_base_url}/order_batches/#{batch_id}")
     orders = current_page.links.select { |l| l.href.to_s.match(/\/orders\/.*/) }
     orders.map{ |l| l.text.split('-').first }
