@@ -5,7 +5,6 @@ Whiplash Batches Api
 ```ruby
 gem 'whiplash-batches-api'
 ```
-## Usage
 create `config/initializer/whiplash_initializer.rb` file
 ```ruby
 Whiplash.configure do |config|
@@ -14,6 +13,76 @@ Whiplash.configure do |config|
   config.whiplash_base_url = 'https://www.getwhiplash.com'
 end
 ```
+## Usage
+``` ruby
+handler = Whiplash::Batches::Api.new
+```
+### GET BATCHES
+``` ruby
+handler.batches
+```
+response is 
+``` json
+[{"batch"=>"437737",
+  "to_pack"=>"2",
+  "to_label"=>"2",
+  "total_items"=>"51",
+  "printed"=>"Mar 01, 2019  2:20PM",
+  "pre_pack_buy"=>"",
+  "assigned"=>"Start",
+  "started"=>"",
+  "stopped"=>"",
+  "min"=>"",
+  "incidents"=>"",
+  "order_ids"=>["7511027", "7515574"]},
+  {"batch"=>"437732",
+  "to_pack"=>"2",
+  "to_label"=>"2",
+  "total_items"=>"51",
+  "printed"=>"Mar 01, 2019  2:20PM",
+  "pre_pack_buy"=>"",
+  "assigned"=>"Start",
+  "started"=>"",
+  "stopped"=>"",
+  "min"=>"",
+  "incidents"=>"",
+  "order_ids"=>["7511021", "7515575"]}
+]
+```
+
+You can also add page number and ignore_list
+1. if page number is given we fetch from given page number to end (ie if total pages we 10 and given page number is 7 then we return all batches from 7 to 10 pages)
+2. If you want to ignore some batches add array of batch ids
+``` ruby
+  handler.batches(1, ["437737"])
+```
+It returns 
+``` json
+[
+  {"batch"=>"437732",
+  "to_pack"=>"2",
+  "to_label"=>"2",
+  "total_items"=>"51",
+  "printed"=>"Mar 01, 2019  2:20PM",
+  "pre_pack_buy"=>"",
+  "assigned"=>"Start",
+  "started"=>"",
+  "stopped"=>"",
+  "min"=>"",
+  "incidents"=>"",
+  "order_ids"=>["7511021", "7515575"]}
+]
+```
+
+### GET ORDERS
+``` ruby
+  handler.orders(437732)
+```
+it returns
+``` json
+["7511021", "7515575"]
+```
+
 # License
 
 Copyright (c) 2018 Waqas Ali
