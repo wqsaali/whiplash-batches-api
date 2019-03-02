@@ -23,30 +23,31 @@ handler.batches
 ```
 response is 
 ``` json
-[{"batch"=>"437737",
-  "to_pack"=>"2",
-  "to_label"=>"2",
-  "total_items"=>"51",
-  "printed"=>"Mar 01, 2019  2:20PM",
-  "pre_pack_buy"=>"",
-  "assigned"=>"Start",
-  "started"=>"",
-  "stopped"=>"",
-  "min"=>"",
-  "incidents"=>"",
-  "order_ids"=>["7511027", "7515574"]},
-  {"batch"=>"437732",
-  "to_pack"=>"2",
-  "to_label"=>"2",
-  "total_items"=>"51",
-  "printed"=>"Mar 01, 2019  2:20PM",
-  "pre_pack_buy"=>"",
-  "assigned"=>"Start",
-  "started"=>"",
-  "stopped"=>"",
-  "min"=>"",
-  "incidents"=>"",
-  "order_ids"=>["7511021", "7515575"]}
+[{"batch": "437737",
+  "to_pack": "2",
+  "to_label": "2",
+  "total_items": "51",
+  "printed": "Mar 01, 2019  2:20PM",
+  "pre_pack_buy": "",
+  "assigned": "Start",
+  "started": "",
+  "stopped": "",
+  "min": "",
+  "incidents": "",
+  "order_ids": ["7511027", "7515574"]},
+  {"batch": "437732",
+  "to_pack": "2",
+  "to_label": "2",
+  "total_items": "51",
+  "printed": "Mar 01, 2019  2:20PM",
+  "pre_pack_buy": "",
+  "assigned": "Start",
+  "started": "",
+  "stopped": "",
+  "min": "",
+  "incidents": "",
+  "order_ids": ["7511021", "7515575"]
+  }
 ]
 ```
 
@@ -59,18 +60,19 @@ You can also add page number and ignore_list
 It returns 
 ``` json
 [
-  {"batch"=>"437732",
-  "to_pack"=>"2",
-  "to_label"=>"2",
-  "total_items"=>"51",
-  "printed"=>"Mar 01, 2019  2:20PM",
-  "pre_pack_buy"=>"",
-  "assigned"=>"Start",
-  "started"=>"",
-  "stopped"=>"",
-  "min"=>"",
-  "incidents"=>"",
-  "order_ids"=>["7511021", "7515575"]}
+  {"batch": "437732",
+  "to_pack": "2",
+  "to_label": "2",
+  "total_items": "51",
+  "printed": "Mar 01, 2019  2:20PM",
+  "pre_pack_buy": "",
+  "assigned": "Start",
+  "started": "",
+  "stopped": "",
+  "min": "",
+  "incidents": "",
+  "order_ids": ["7511021", "7515575"]
+  }
 ]
 ```
 
