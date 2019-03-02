@@ -3,7 +3,7 @@
 Whiplash Batches Api
 ## Get Started
 ```ruby
-gem 'whiplash-batches-api'
+gem 'whiplash-batches-api', github: 'wqsaali/whiplash-batches-api'
 ```
 create `config/initializer/whiplash_initializer.rb` file
 ```ruby
@@ -87,7 +87,7 @@ it returns
 
 # License
 
-Copyright (c) 2018 Waqas Ali
+Copyright (c) 2019 Waqas Ali
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
