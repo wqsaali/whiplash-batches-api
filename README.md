@@ -6,8 +6,14 @@ Whiplash Batches Api
 gem 'whiplash-batches-api'
 ```
 ## Usage
-... under dev
-
+create `config/initializer/whiplash_initializer.rb` file
+```ruby
+Whiplash.configure do |config|
+  config.whiplash_email = WHIPLASH_EMAIL
+  config.whiplash_password = WHIPLASH_PASSWORD
+  config.whiplash_base_url = 'https://www.getwhiplash.com'
+end
+```
 # License
 
 Copyright (c) 2018 Waqas Ali

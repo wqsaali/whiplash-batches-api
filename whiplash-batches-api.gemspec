@@ -14,10 +14,10 @@ Gem::Specification.new do |gem|
   gem.email         = ["wqsaali@gmail.com"]
   gem.description   = %q{Enable Whiplash batches api with email/password}
   gem.summary       = %q{Enable Whiplash batches api with emai/password}
-  # gem.homepage      = "https://github.com/wqsaali/whiplash-batches-api"
+  gem.homepage      = "https://github.com/wqsaali/whiplash-batches-api"
   gem.license       = "GPL-3.0"
 
-  # gem.files         = `git ls-files`.split("\n")
+  gem.files         = `git ls-files`.split("\n")
   # gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "whiplash-batches-api"
   gem.require_paths = ["lib"]
