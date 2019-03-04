@@ -34,7 +34,9 @@ response is
   "stopped": "",
   "min": "",
   "incidents": "",
-  "order_ids": ["7511027", "7515574"]},
+  "order_ids": ["7511027", "7515574"]
+  "page": 1
+  },
   {"batch": "437732",
   "to_pack": "2",
   "to_label": "2",
@@ -47,6 +49,7 @@ response is
   "min": "",
   "incidents": "",
   "order_ids": ["7511021", "7515575"]
+  "page": 2
   }
 ]
 ```
@@ -72,6 +75,7 @@ It returns
   "min": "",
   "incidents": "",
   "order_ids": ["7511021", "7515575"]
+  "page": 2
   }
 ]
 ```

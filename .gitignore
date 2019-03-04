@@ -12,3 +12,4 @@
 /.rake_t_cache
 /Gemfile.lock
 *.gem
+.vscode

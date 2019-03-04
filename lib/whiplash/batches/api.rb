@@ -71,6 +71,7 @@ class Whiplash::Batches::Api
           hash[headers[index]] = td.at('a').present? ? td.at('a').text.strip : td.text.strip
         end
         hash['order_ids'] = orders(hash['batch']) 
+        hash['page'] = current_page
         records << hash
       end
       records
