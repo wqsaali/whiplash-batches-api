@@ -1,6 +1,6 @@
 require 'mechanize'
 class Whiplash::Batches::Api
-  attr_reader :agent, :current_page, :whiplash_base_url
+  attr_reader :agent, :current_page, :whiplash_base_url, :order_current_page
 
   def initialize
     if Whiplash.configuration.present?
@@ -35,8 +35,8 @@ class Whiplash::Batches::Api
 
   def orders(batch_id = nil)
     return [] if batch_id.nil?
-    @current_page = agent.get("#{@whiplash_base_url}/order_batches/#{batch_id}")
-    orders = current_page.links.select { |l| l.href.to_s.match(/\/orders\/.[0-9]+/) }
+    @order_current_page = agent.get("#{@whiplash_base_url}/order_batches/#{batch_id}")
+    orders = order_current_page.links.select { |l| l.href.to_s.match(/\/orders\/.[0-9]+/) }
     orders.map{ |l| l.text.split('-').first }
   end
 
