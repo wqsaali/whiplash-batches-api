@@ -7,5 +7,5 @@ end
 
 desc "Build and release the gem"
 task :release => :build do
-  system "gem push whiplash-batches-api-#{Whiplash::Batches::Api::VERSION}.gem"
+  system "gem push whiplash-batches-api-#{Whiplash::Batches::VERSION}.gem"
 end
