@@ -17,13 +17,13 @@ class Whiplash::Batches::Api
     results = []
     ignore_ids.map!(&:to_s) # convert to ids of string
     @current_page = agent.get("#{@whiplash_base_url}/order_batches?page=#{page}")
-    results << build_batch_hash(current_page, ignore_ids)
+    results << build_batch_hash(current_page, ignore_ids, page)
     page += 1 # page is scrapped already
     loop do
       next_page = current_page.links.find{ |l| l.href.to_s.include?("/order_batches?page=#{page}") }
       if next_page.present?
         batch_page = next_page.click
-        results << build_batch_hash(batch_page, ignore_ids)
+        results << build_batch_hash(batch_page, ignore_ids, page)
         page += 1
       else
         break
@@ -59,7 +59,7 @@ class Whiplash::Batches::Api
     raise 'whiplash_base_url is not configured in initializer' if @whiplash_base_url.nil?
   end
 
-  def build_batch_hash(current_page, ignore_ids)
+  def build_batch_hash(current_page, ignore_ids, page)
     records = []
     table = current_page.search('table#order-batches')[0]
     if table.present?
@@ -71,7 +71,7 @@ class Whiplash::Batches::Api
           hash[headers[index]] = td.at('a').present? ? td.at('a').text.strip : td.text.strip
         end
         hash['order_ids'] = orders(hash['batch']) 
-        hash['page'] = current_page
+        hash['page'] = page
         records << hash
       end
       records
