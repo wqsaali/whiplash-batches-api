@@ -22,6 +22,7 @@ class Whiplash::Batches::Api
     loop do
       next_page = current_page.links.find{ |l| l.href.to_s.include?("/order_batches?page=#{page}") }
       if next_page.present?
+        debugger
         batch_page = next_page.click
         results << build_batch_hash(batch_page, ignore_ids, page)
         page += 1
